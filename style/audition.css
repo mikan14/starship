@@ -227,6 +227,7 @@ body::before {
 
 #main-nav {
     margin-top: 15px;
+    font-size: large;
 }
 
 #main-nav ul {

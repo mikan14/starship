@@ -1,0 +1,332 @@
+:root {
+    --main-bg:white;
+    --accent: black;
+    --text-light: white;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11pt;
+    position: relative;
+    z-index: 0;
+}
+
+body::before {
+    content: "";
+    position: fixed; /*Sticks it to the viewport*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130%;
+    background-image: url("image/lizyeyo.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;  /*Puts it behind the content*/
+}
+
+
+#site-container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#menu-content-wrapper {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+#menu-content {
+    display: flex;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+#menu {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+#content { 
+    height: auto;
+    background: white;
+    color: black;
+    padding: 15px;
+}
+
+
+#footer {
+    width: 100%;
+    padding: 20px 0;
+    background: var(--main-bg);
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.floating {
+    clear: both;
+    height: 0px;
+    line-height: 0px;
+}
+
+#header {
+    width: 100%;
+    background: white;
+    padding: 20px 0;
+    text-align: center;
+    height: auto;
+    box-sizing: border-box;
+    opacity: 0.9;
+    /*display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 10s linear infinite;*/
+}
+
+/*@keyframes scroll-left {
+    0% {
+                    transform: translateX(100%);
+                }
+                100% {
+                    transform: translateX(-100%);
+                }
+}*/
+
+#header h1 a {
+    color: orange;
+    text-decoration: none;
+    font-size: 50pt;
+}
+
+/*#header p {
+    font: 20pt 'Brush Script Std';
+    color: cyan;
+}*/
+
+.judul_1 {
+    display: block;
+    height: 40px;
+    background: white;
+    color: black;
+    text-align: center;
+    border: 1px solid red;
+}
+
+#menu ul {
+    list-style: none;
+}
+
+#menu li a {
+    display: block;
+    height: 30px;
+    background-color: rgb(3, 29, 116);
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid red;
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+    padding-left: 20px;
+    text-align: center;
+}
+
+#menu li a:hover {
+    background: var(--accent);
+    color: var(--text-light);
+}
+
+.judul_2 {
+    display: block;
+    border-bottom: 2px solid #000;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: black;
+    padding-bottom: 10px;
+}
+
+.img {
+    width: 250px;
+    height: 200px;
+    border: 5px solid #fff;
+    margin-top: 20px;
+    margin-right: 20px;
+    float: left;
+    transition: transform 0.3s ease;
+}
+
+.img:hover {
+    transform: scale(1.05);
+}
+
+
+#content p {
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #e07e00;
+}
+
+#main-nav {
+    margin-top: 15px;
+    font-size: large;
+}
+
+#main-nav ul {
+    display: inline-flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+#main-nav li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease; /*transisi dari warna bg ke bg text */
+}
+
+#main-nav li a:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+.hero-slider {
+    width: 100%; /*lebar bingkai*/
+    height: 500px; /*tinggi bingkai*/
+    max-width: 1100px;
+    overflow: hidden;
+    margin: 30px auto; /*agar ke tengah*/
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.slider-track a {
+  display: block;
+  width: 100%;
+  height: 500px;
+  flex-shrink: 0;
+}
+
+.slider-track img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-user-drag: none; /*prevents image dragging*/
+    pointer-events: auto; /*allow js working*/
+}
+
+.free-slider {
+    display: flex;
+    max-width: auto;
+    overflow-x: auto;
+    border-radius: 10px;
+    position: relative;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    gap: 20px;
+    -webkit-overflow-scrolling: touch;
+    -webkit-user-drag: none;
+}
+
+.free-slider::-webkit-scrollbar {
+    display: none; /*hanya untuk chrome safari dan opera*/
+}
+
+.free-slider img {
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 8px;
+    user-select: none;
+    -webkit-user-drag: none; /*prevents image dragging*/
+}
+
+.surf {
+    width: 2.5rem;
+    max-width: 100%;
+    margin: 1rem 0px;
+    height: 2px;
+    background: rgb(255, 127, 0);
+}
+
+.black-line {
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+    opacity: 0.5;
+    padding-left: 250px;
+    padding-right: 250px;
+}
+
+.marquee {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-track {
+    display: flex;
+    height: 300px;
+    width: 500px;
+    animation:scrollmarquee 10s linear alternate;
+}
+
+.marquee-track img {
+    width: auto;
+    height: 100%;
+    object-fit: fill;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-user-drag: none;
+    margin-right: 50px;
+    border-radius: 10px;
+}
+
+@keyframes scrollmarquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-4000px);
+            }
+        }

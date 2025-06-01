@@ -137,7 +137,7 @@ body::before {
     text-align: center;
     height: auto;
     box-sizing: border-box;
-    opacity: 0.8;
+    opacity: 0.9;
     /*display: inline-block;
     white-space: nowrap;
     animation: scroll-left 10s linear infinite;*/
@@ -410,120 +410,11 @@ body::before {
     color: inherit;
 }
 
-.logo {
-  width: 450px; /* desktop size */
-  height: auto;
-}
-
-@media (max-width: 768px) {
-  body {
-    font-size: 10pt;
-  }
-
-  #site-container,
-  #menu-content,
-  #content,
-  #menu {
-    padding: 10px;
-    margin: 0 auto;
-  }
-
-  #menu-content {
-    flex-direction: column;
-  }
-
-  #content h1 {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .hero-slider,
-  .slider-track a,
-  .slider-track img {
-    height: 250px;
-  }
-
-  .free-slider {
-    margin-left: 10px;
-    margin-right: 10px;
-    gap: 10px;
-  }
-
-  .free-slider img {
-    width: 200px;
-    height: 130px;
-  }
-
-  .surf {
-    margin-left: 10px;
-  }
-
-  .black-line {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .table {
-    flex-direction: column;
-    margin-left: 10px;
-    margin-right: 10px;
-    gap: 1rem;
-  }
-
-  #header h1 a {
-    font-size: 30pt;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-
-  .footer-left,
-  .footer-right {
-    justify-content: center;
-    align-items: center;
-  }
-
-  .footer-logo {
-    height: 40px;
-  }
-
-  .judul_2 {
-    font-size: 20px;
-  }
-
-  .img {
+#middle2 {
     width: 100%;
-    height: auto;
-    float: none;
-    margin: 10px 0;
-  }
-
-  #main-nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  #main-nav li a {
-    display: block;
+    background: white;
+    padding: 20px 0;
     text-align: center;
-  }
-
-  .marquee {
-    height: 200px;
-  }
-
-  .marquee-track {
-    height: 200px;
-  }
-
-  .marquee-track img {
-    height: 100%;
-  }
+    height: auto;
+    box-sizing: border-box;
 }
-
-.logo {
-    width: 450px;  /* smaller logo on phones */
-  }

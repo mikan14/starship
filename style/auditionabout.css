@@ -148,8 +148,11 @@ body::before {
 }
 
 #middle-bg h2 {
-    margin-left: 400px;
-    margin-right: 400px;
+  max-width: 800px;          /* limits line length for readability */
+  margin: 0 auto;            /* centers the h2 block */
+  padding: 0 20px;           /* keeps space on small screens */
+  box-sizing: border-box;
+  font-size: 18px;
 }
 
 #middle2 {
@@ -243,11 +246,10 @@ body::before {
 .surf2 {
     width: 2.5rem;
     max-width: 100%;
-    margin-left: 925px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px auto; /* vertical margin 20px, auto left and right for centering */
     height: 2px;
     background: rgb(255, 127, 0);
+    display: block; /* ensure it's a block-level element so margin auto works */
 }
 
 .black-line {
@@ -382,6 +384,118 @@ body::before {
 }
 
 .auditiontext {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 1rem;
 }
+
+.logo {
+  width: 450px; /* desktop size */
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  #site-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  #content {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .black-line {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-bottom: 1rem; /* reduced from 1cm */
+  }
+
+  #menu-content {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  #menu {
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+
+  #menu-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img {
+    width: 100% !important;
+    height: auto !important;
+    float: none !important;
+    margin: 0 0 20px 0 !important;
+  }
+
+  .table {
+    flex-direction: column !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .table-inside {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+
+  /* Adjust navigation for smaller screens */
+  #main-nav ul,
+  #secondary-nav ul {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  #main-nav li a,
+  #secondary-nav li a {
+    display: block;
+    text-align: center;
+    padding: 12px 0;
+  }
+}
+
+body {
+    font-size: 9pt;
+  }
+
+  #header h1 a {
+    font-size: 30pt;
+  }
+
+  .judul_2 {
+    font-size: 20px; /
+  }
+
+  #secondary-nav ul {
+    justify-content: flex-start !important; /* align left on mobile */
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #secondary-nav {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #secondary-nav li a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+   #middle-bg {
+    font-size: 12px;
+    padding-left: 15px !important;  /* reduce big paddings */
+    padding-right: 15px !important;
+    box-sizing: border-box;  /* keep padding included in width */
+    text-align: center;
+    overflow-wrap: break-word; /* prevent long words from breaking layout */
+  }
+
+  .logo {
+    width: 450px;  /* smaller logo on phones */
+  }

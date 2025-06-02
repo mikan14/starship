@@ -525,5 +525,67 @@ body::before {
 }
 
 .logo {
-    width: 450px;  /* smaller logo on phones */
+    width: 200px;  /* smaller logo on phones */
+    height: auto;
   }
+
+  @media (min-width: 768px) {
+    .slider-track img {
+    width: 100%;
+    height: 390px;
+    object-fit: fill;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-user-drag: none; /*prevents image dragging*/
+    pointer-events: auto; /*allow js working*/
+}
+  }
+
+  @media (min-width: 768px) {
+  .hero-slider {
+    width: 100%; /*lebar bingkai*/
+    height: 390px; /*tinggi bingkai*/
+    max-width: 1100px;
+    overflow: hidden;
+    margin: 30px auto; /*agar ke tengah*/
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+@media (min-width: 1024px) {
+    .slider-track img {
+    width: 100%;
+    height: 550px;
+    object-fit: fill;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-user-drag: none; /*prevents image dragging*/
+    pointer-events: auto; /*allow js working*/
+}
+  }
+
+  @media (min-width: 1024px) {
+  .hero-slider {
+    width: 100%; /*lebar bingkai*/
+    height: 550px; /*tinggi bingkai*/
+    max-width: 1100px;
+    overflow: hidden;
+    margin: 30px auto; /*agar ke tengah*/
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+
+/* untuk tablet */
+@media (min-width: 768px) {
+  .logo {
+    width: 400px;
+}
+
+/* untuk pc */
+@media (min-width: 1024px) {
+  .logo {
+    width: 450px;
+}

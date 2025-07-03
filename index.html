@@ -3,15 +3,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>STARSHIP ENTERTAINMENT</title>
         <link rel="icon" type="image/x-icon" href="style/image/icons/jordi.png">
-        <link rel="stylesheet" type="text/css" href="style/home.css">
+        <link rel="stylesheet" type="text/css" href="style/style.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     </head> <!-- end head -->
 
     <body>
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="style/video/IVE 아이브 Off The Record TEASER.mp4" type="video/mp4">
+        </video>
         <div id="header">
             <a href="index.html"><img src="style/image/icons/Starship_Entertainment_Logo.png" class="logo"></a>
-        <nav id="main-nav">
+            <div class="hamburger" id="hamburger">
+                &#9776;
+            </div>
+            <nav id="main-nav">
             <ul>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about us.html">About Us</a></li>
                 <li><a href="artists.html">Artists</a></li>
                 <li><a href="audition.html">Audition</a></li>
@@ -22,15 +29,26 @@
 
         <div class="hero-slider">
             <div class="slider-track">
-                <a href="https://www.youtube.com/watch?v=38xYeot-ciM" target="_blank"><img src="style/image/homepage/attitude.jpg" alt="attitude"></a>
-                <a href="https://www.youtube.com/watch?v=g36q0ZLvygQ&ab_channel=STARSHIP" target="_blank"><img src="style/image/homepage/rebelheart.jpeg" alt="rebelheart"></a>
-                <img src="style/image/homepage/kiiikiii_1080.jpg" alt="kiiikiii_1080">
+                <a href="https://www.youtube.com/watch?v=ltXBcOo4hdc" target="_blank"><img src="style/image/homepage/firesofrubicon.png"
+                alt="firesofrubicon"></a>
+                <!--ts is cstm pidio-->
+                <div class="slider-video">
+                    <div class="video-wrapper">
+                        <video id="homepage-video" poster="style/image/homepage/armoredcore.png">
+                            <source src="style/video/Replay_2025.06.23-15.20.mp4" type="video/mp4">
+                        </video>
+                        <img src="style/image/icons/playbutton.png" alt="play" class="play-button">
+                    </div>
+                </div>
+                <!--ts is end pidio-->
                 <img src="style/image/homepage/frenzyflame.png" alt="frenzyflame">
                 <img src="style/image/homepage/elden.png" alt="elden">
                 <img src="style/image/homepage/rellana.png" alt="rellana">
             </div>
         </div> <!--hero-slider end-->
         
+        
+
         <div id="content">
         <h1>MULTIMEDIA</h1>
         <div class="surf"></div>

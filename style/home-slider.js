@@ -1,3 +1,4 @@
+// --- SLIDER 1: Hero/Multi Slider ---
 document.querySelectorAll('.hero-slider, .multi-slider').forEach((slider) => {
   const track = slider.querySelector('.slider-track') || slider.querySelector('.multi-track');
   const slides = Array.from(track.children);
@@ -83,13 +84,13 @@ document.querySelectorAll('.hero-slider, .multi-slider').forEach((slider) => {
   setPositionByIndex();
   startAutoplay();
 
-  // prevent dragging image to new tab
+  // Prevent dragging image to new tab
   slides.forEach(img => {
     img.setAttribute('draggable', 'false');
   });
 });
 
-
+// --- SLIDER 2: Free Scroll Slider ---
 document.querySelectorAll('.free-slider').forEach((slider) => {
   let isDown = false;
   let startX;
@@ -119,4 +120,28 @@ document.querySelectorAll('.free-slider').forEach((slider) => {
     const walk = (x - startX) * 2; // scroll speed
     slider.scrollLeft = scrollLeft - walk;
   });
+});
+
+// --- hamburg ---
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('main-nav');
+
+if (hamburger && nav) {
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('show');
+  });
+}
+
+// --- pelerbaten ---
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('homepage-video');
+  const playBtn = document.querySelector('.play-button');
+
+  if (video && playBtn) {
+    playBtn.addEventListener('click', () => {
+      video.controls = true;
+      video.play();
+      playBtn.style.display = 'none';
+    });
+  }
 });

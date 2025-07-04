@@ -1427,6 +1427,7 @@ THIS IS THE HOME CSS COMBINED
 }
 
 /*THIS IS THE ARTISTPAGE CSS*/
+/*about the artist css*/
 .artist-about {
   display: flex;
   align-items: center;
@@ -1460,7 +1461,7 @@ THIS IS THE HOME CSS COMBINED
   margin-bottom: 16px;
   margin-top: 16px;
 }
-
+/*end here*/
 .rec-video {
   text-align: center;
   padding: 40px 20px;
@@ -1713,4 +1714,169 @@ THIS IS THE HOME CSS COMBINED
 
 .application-form button:hover {
   background-color: #555;
+}
+
+@media (max-width: 768px) {
+  .artist-about {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .artist-photo {
+    width: 90%;
+  }
+
+  .artist-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .artist-text h2 {
+    font-size: 28px;
+  }
+
+  .artist-text p {
+    font-size: 16px;
+  }
+
+  .rec-video h2 {
+    font-size: 26px;
+  }
+
+  .video-grid iframe {
+    width: 100%;
+    height: 200px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .section-header h2 {
+    font-size: 26px;
+  }
+
+  .view-all {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .album-scroll {
+    gap: 12px;
+  }
+
+  .music-section {
+    width: 90vw !important;
+  }
+
+  .album-card-sec {
+    width: 95% !important;
+    padding: 10px;
+  }
+
+  .album-card {
+    width: 160px;
+    padding: 10px;
+  }
+
+  .album-title {
+    font-size: 14px;
+  }
+
+  .idol-data h2 {
+    font-size: 28px;
+  }
+
+  .data-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .data-left, .data-right {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .data-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .data-row span:first-child {
+    width: auto;
+  }
+
+  .idol-application h2 {
+    font-size: 26px;
+  }
+
+  .idol-application p {
+    font-size: 14px;
+  }
+
+  .application-form {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;
+  }
+
+  .application-form button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  #scrollTopBtn {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 425px) {
+
+  .album-card-sec {
+    width: 95% !important;
+    padding: 10px;
+  }
+
+  .music-section {
+    background-color: #dcdcdc;
+    width: 82vw !important;
+  }
+
+}
+
+@media (max-width: 1024px) {
+
+  .video-grid iframe {
+    width: 100%;
+    height: 200px;
+  }
+
+  .album-card-sec {
+    width: 95% !important;
+    padding: 10px;
+  }
+
+  .music-section {
+    background-color: #dcdcdc;
+    width: 93vw !important;
+  }
+
+  .album-card {
+    width: 160px;
+    padding: 10px;
+  }
+
 }

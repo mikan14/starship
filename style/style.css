@@ -115,10 +115,18 @@ body {
 
 #middle {
     width: 100%;
-    padding: 20px 0;
+    min-height: 220px; /* or use height: 80vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertically center */
+    align-items: center;     /* horizontally center */
     text-align: center;
-    height: auto;
-    background-color: yellow;
+    font-size: 15px;
+    color: white;
+    background-image: url("image/bg/bg_pattern_04");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     box-sizing: border-box;
 }
 
@@ -142,10 +150,15 @@ body {
 
 #middle2 {
     width: 100%;
-    background: white;
-    padding: 20px 0;
+    min-height: 220px; /* or use height: 80vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertically center */
+    align-items: center;     /* horizontally center */
     text-align: center;
-    height: auto;
+    font-size: 30px;
+    color: black;
+    background-color: white;
     box-sizing: border-box;
 }
 
@@ -1411,4 +1424,293 @@ THIS IS THE HOME CSS COMBINED
     transform: translate(-50%, -50%);
     z-index: 10;
   }
+}
+
+/*THIS IS THE ARTISTPAGE CSS*/
+.artist-about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding:60px 40px;
+}
+
+.artist-photo {
+  width: 400px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0,2);
+}
+
+.artist-text {
+  max-width: 700px;
+  text-align: left;
+}
+
+.artist-text h2 {
+  margin-bottom: 12px;
+  font-size: 36px;
+}
+
+.artist-text p {
+  line-height: 1.8;
+  font-size: 20px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.rec-video {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.rec-video h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.video-grid iframe {
+  width: 320px;
+  height: 180px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.music-section {
+  background-color: #fefefe;
+  padding: 60px 40px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  color: #222;
+}
+
+.view-all {
+  font-size: 14px;
+  color: white;
+  background-color: #333;
+  padding: 8px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.album-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.album-card {
+  min-width: 200px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.album-card[href] {
+  z-index: 10;
+}
+
+.album-card:hover {
+  transform: scale(1.02);
+  transition: 0.2 ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.no-hover:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  cursor: default;
+}
+
+.album-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.album-tags {
+  margin-bottom: 6px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #ddd;
+  color: #333;
+  padding: 2px 8px;
+  font-size: 12px;
+  border-radius: 12px;
+  margin: 0 4px;
+}
+
+.album-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.idol-data {
+  background-color: #fdfcfe;
+  padding: 60px 40px;
+  color: #222;
+}
+
+.idol-data h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+  letter-spacing: 1.5px;
+}
+
+.data-grid {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.data-left, .data-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 450px;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.data-row span:first-child {
+  font-weight: 600;
+  color: #555;
+  width: 160px;
+}
+
+.data-row span:last-child {
+  flex: 1;
+  color: #222;
+  white-space: pre-wrap;
+}
+
+#scrollTopBtn {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  z-index: 99;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollTopBtn:hover {
+  background-color: #555;
+}
+
+.idol-application {
+  background-color: #f9f9f9;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.idol-application h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.idol-application p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.application-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.application-form button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.application-form button:hover {
+  background-color: #555;
 }

@@ -37,31 +37,46 @@
                 <h2>AUDITION APPLICATION</h2>
                 <p>Fill in your information below to apply</p>
 
-                <form class="application-form">
+                <form action="https://formsubmit.co/9ievanwijaya@gmail.com" method="POST" class="application-form" id="auditionForm">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="thankyoupage.html">
+
                     <div class="form-grid">
-                        <input type="text" placeholder="Name">
-                        <input type="text" placeholder="Nationality">
-                        <select><option>Female</option><option>Male</option></select>
-                        <select><option>Vocal</option><option>Dance</option><option>Visual</option></select>
-                        <input type="text" placeholder="Height (cm)">
-                        <input type="text" placeholder="Weight (kg)">
-                        <input type="date" id="age">
-                        <input type="text" placeholder="School/Job">
-                        <input type="text" placeholder="Country Code">
-                        <input type="text" placeholder="Contact">
-                        <input type="text" placeholder="Email">
-                        <input type="text" placeholder="SNS">
-                        <input type="text" placeholder="Address">
-                        <textarea placeholder="Special Skills/Career History"></textarea>
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="text" name="nationality" placeholder="Nationality" required>
+                        <select name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option>Female</option>
+                            <option>Male</option>
+                        </select>
+                        <select name="talent" required>
+                            <option value="">Select Talent</option>
+                            <option>Vocal</option>
+                            <option>Dance</option>
+                            <option>Visual</option>
+                        </select>
+                        <input type="text" name="height" placeholder="Height (cm)" required>
+                        <input type="text" name="weight" placeholder="Weight (kg)" required>
+                        <input type="date" name="birthdate" id="age" required>
+                        <input type="text" name="school" placeholder="School/Job" required>
+                        <input type="text" name="countrycode" placeholder="Country Code" required>
+                        <input type="text" name="contact" placeholder="Contact" required>
+                        <input type="text" name="email" placeholder="Email" required>
+                        <input type="text" name="sns" placeholder="SNS" required>
+                        <input type="text" name="address" placeholder="Address" required>
+                        <textarea name="skills" placeholder="Special Skills/Career History"></textarea>
+                    </div> <!-- end application form -->
+
+                    <div id="secondary-nav">
+                        <ul>
+                            <li>
+                                <button type="submit" class="custom-button">SUBMIT YOUR APPLICATION</button>
+                            </li>
+                        </ul>
                     </div>
                 </form>
-                <nav id="secondary-nav">
-                    <ul>
-                        <li><a href="thankyoupage.html">SUBMIT YOUR APPLICATION</a></li>
-                    </ul>
-                </nav>
             </section>
-        </div>
+        </div> <!-- end content div -->
 
     <footer id="footer"> <!-- footer start -->
         <div class="footer-container">

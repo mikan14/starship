@@ -1985,7 +1985,54 @@ THIS IS THE HOME CSS COMBINED
   .form-grid textarea {
     grid-column: span 1;
   }
+
+  .achievements-section {
+    padding: 40px 20px;
+  }
+
+  .achievements-section h2 {
+    font-size: 28px !important;
+    margin-left: 0 !important;
+  }
+
+  .achievements-list {
+    padding-left: 0 !important;
+    font-size: 15px !important;
+    text-align: center !important;
+
+  }
+
+  .achievements-list li {
+    text-align: left;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .achievements-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #222;
+  }
+
+#middle-bg h2 {
+  font-size: 15px !important;
 }
+
+.mv-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .mv-box h3 {
+    font-size: 22px;
+  }
+
+  .mv-box p {
+    font-size: 15px;
+  }
+}
+
 
 @media screen and (min-width: 1024px) {
   #secondary-nav {
@@ -2018,4 +2065,102 @@ THIS IS THE HOME CSS COMBINED
     background-color: orange;
     color: black;
   }
+}
+
+.achievements-section {
+  padding: 60px 40px;
+  text-align: left;
+  color: #222;
+}
+
+.achievements-section h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  margin-left: 2vw;
+  letter-spacing: 1px;
+}
+
+.achievements-list {
+  list-style-type: disc;
+  padding-left: 40px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.achievements-list li {
+  margin-bottom: 12px;
+  list-style: none;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mv-section {
+  padding: 60px 40px;
+  color: #222;
+}
+
+.mv-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.mv-box {
+  flex: 1 1 300px;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.mv-text {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.mv-desc {
+  flex: 1 1 300px;
+  font-size: 18px;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.mv-desc.left-fade.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mv-desc.right-fade.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mv-explanation {
+  max-width: 900px;
+  margin: 40px auto 0;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333;
+  text-align: center;
+  padding: 0 20px;
 }

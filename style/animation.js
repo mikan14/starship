@@ -200,3 +200,18 @@ const enterArrow = document.getElementById('enter-arrow');
       }, 1000);
     });
   }
+
+  const fadeSections = document.querySelectorAll('.fade-in-section, .left-fade, .right-fade');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeSections.forEach(section => {
+    observer.observe(section);
+  });

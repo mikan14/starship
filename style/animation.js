@@ -187,3 +187,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+const enterArrow = document.getElementById('enter-arrow');
+  const splash = document.getElementById('artist-splash'); // make sure the ID matches!
+
+  if (enterArrow && splash) {
+    enterArrow.addEventListener('click', () => {
+      splash.classList.add('hide');
+
+      setTimeout(() => {
+        splash.style.display = 'none';
+      }, 1000);
+    });
+  }

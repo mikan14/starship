@@ -52,6 +52,58 @@ body {
   100% {opacity: 0; transform: scale(1.1);}
 }
 
+#artist-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 1s ease, opacity 1s ease;
+  overflow: hidden;
+}
+
+#artist-splash.hide {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.8s ease;
+  pointer-events: none;
+}
+
+.artist-splash-logo {
+  text-align: center;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.enter-arrow {
+  font-size: 30px;
+  cursor: pointer;
+  color: black;
+  animation: bounce 1s infinite;
+}
+
+/* Slide-up + fade out */
+#splash-overlay.hide {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+
 #site-container {
     width: 100%;
     max-width: 960px;

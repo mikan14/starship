@@ -1,4 +1,4 @@
-// --- SLIDER 1: Hero/Multi Slider ---
+/*// --- SLIDER 1: Hero/Multi Slider ---
 document.querySelectorAll('.hero-slider, .multi-slider').forEach((slider) => {
   const track = slider.querySelector('.slider-track') || slider.querySelector('.multi-track');
   const slides = Array.from(track.children);
@@ -89,51 +89,53 @@ document.querySelectorAll('.hero-slider, .multi-slider').forEach((slider) => {
     img.setAttribute('draggable', 'false');
   });
 });
+--- end slider 1 */
 
-// --- SLIDER 2: Free Scroll Slider ---
-document.querySelectorAll('.free-slider').forEach((slider) => {
-  let isDown = false;
-  let startX;
-  let scrollLeft;
 
-  slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
+document.addEventListener("DOMContentLoaded", function () {
+  // --- SLIDER 2: Free Scroll Slider ---
+  document.querySelectorAll('.free-slider').forEach((slider) => {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('active');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2;
+      slider.scrollLeft = scrollLeft - walk;
+    });
   });
 
-  slider.addEventListener('mouseleave', () => {
-    isDown = false;
-    slider.classList.remove('active');
-  });
+  // --- hamburger toggle ---
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('main-nav');
 
-  slider.addEventListener('mouseup', () => {
-    isDown = false;
-    slider.classList.remove('active');
-  });
+  if (hamburger && nav) {
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  }
 
-  slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2; // scroll speed
-    slider.scrollLeft = scrollLeft - walk;
-  });
-});
-
-// --- hamburg ---
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('main-nav');
-
-if (hamburger && nav) {
-  hamburger.addEventListener('click', () => {
-    nav.classList.toggle('show');
-  });
-}
-
-// --- pelerbaten ---
-document.addEventListener('DOMContentLoaded', () => {
+  // --- homepage video play button ---
   const video = document.getElementById('homepage-video');
   const playBtn = document.querySelector('.play-button');
 
@@ -144,32 +146,44 @@ document.addEventListener('DOMContentLoaded', () => {
       playBtn.style.display = 'none';
     });
   }
-});
 
-// --- artistpage photo slider ---
-let currentSlide = 0;
+  // --- artistpage photo slider ---
+  let currentSlide = 0;
   const slides = document.querySelectorAll(".slide");
   const dots = document.querySelectorAll(".dot");
 
   function showSlide(index) {
-    slides[currentSlide].classList.remove("active");
-    dots[currentSlide].classList.remove("active");
+    slides[currentSlide]?.classList.remove("active");
+    dots[currentSlide]?.classList.remove("active");
     currentSlide = index;
-    slides[currentSlide].classList.add("active");
-    dots[currentSlide].classList.add("active");
+    slides[currentSlide]?.classList.add("active");
+    dots[currentSlide]?.classList.add("active");
   }
 
-  //--- for button scroll up ---
+  // --- scroll to top button ---
   const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-window.onscroll = function () {
-  if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
-    scrollTopBtn.classList.add("show");
-  } else {
-    scrollTopBtn.classList.remove("show");
-  }
-};
+  window.onscroll = function () {
+    if (!scrollTopBtn) return;
+    if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+      scrollTopBtn.classList.add("show");
+    } else {
+      scrollTopBtn.classList.remove("show");
+    }
+  };
 
-scrollTopBtn.onclick = function () {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+  scrollTopBtn?.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // --- audition form submit ---
+  const form = document.getElementById("auditionForm");
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      if (!form.checkValidity()) return;
+      e.preventDefault();
+      window.location.href = "thankyoupage.html";
+    });
+  }
+});

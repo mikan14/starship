@@ -93,7 +93,7 @@ document.querySelectorAll('.hero-slider, .multi-slider').forEach((slider) => {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // --- SLIDER 2: Free Scroll Slider ---
+  // slider di halaman utama
   document.querySelectorAll('.free-slider').forEach((slider) => {
     let isDown = false;
     let startX;
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // --- hamburger toggle ---
+  // --- hamburger ---
   const hamburger = document.getElementById('hamburger');
   const nav = document.getElementById('main-nav');
 
@@ -133,31 +133,6 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.addEventListener('click', () => {
       nav.classList.toggle('show');
     });
-  }
-
-  // --- homepage video play button ---
-  const video = document.getElementById('homepage-video');
-  const playBtn = document.querySelector('.play-button');
-
-  if (video && playBtn) {
-    playBtn.addEventListener('click', () => {
-      video.controls = true;
-      video.play();
-      playBtn.style.display = 'none';
-    });
-  }
-
-  // --- artistpage photo slider ---
-  let currentSlide = 0;
-  const slides = document.querySelectorAll(".slide");
-  const dots = document.querySelectorAll(".dot");
-
-  function showSlide(index) {
-    slides[currentSlide]?.classList.remove("active");
-    dots[currentSlide]?.classList.remove("active");
-    currentSlide = index;
-    slides[currentSlide]?.classList.add("active");
-    dots[currentSlide]?.classList.add("active");
   }
 
   // --- scroll to top button ---
@@ -188,6 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// untuk arrow yg di intro splash
 const enterArrow = document.getElementById('enter-arrow');
   const splash = document.getElementById('artist-splash'); // make sure the ID matches!
 
@@ -201,6 +177,7 @@ const enterArrow = document.getElementById('enter-arrow');
     });
   }
 
+  // untuk yg fade in fade out section
   const fadeSections = document.querySelectorAll('.fade-in-section, .left-fade, .right-fade');
 
   const observer = new IntersectionObserver((entries) => {
@@ -213,5 +190,12 @@ const enterArrow = document.getElementById('enter-arrow');
   }, { threshold: 0.2 });
 
   fadeSections.forEach(section => {
-    observer.observe(section);
+  observer.observe(section);
+});
+
+//cuma bole angka di isi
+const numberInput = document.querySelectorAll('.number-only').forEach((input) => {
+  input.addEventListener('input', () => {
+    input.value = input.value.replace(/[^0-9]/g, '');
   });
+});

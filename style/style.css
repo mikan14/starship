@@ -514,23 +514,6 @@ body {
 
 }
 
-@media (max-width: 768px) {
-  .auditiontext {
-    margin: 0 15px; /* shrink side margins */
-    font-size: 0.95rem; /* slightly smaller text for smaller screens */
-  }
-
-  .auditiontext p {
-    margin: 0 auto;
-    font-size: 0.95rem;
-  }
-
-  .splash-logo img {
-    width: 80vw;
-  }
-
-}
-
 .logo {
   width: 200px; /* phone size */
   height: auto;
@@ -562,6 +545,20 @@ body {
 }
 
 @media (max-width: 768px) {
+  .auditiontext {
+    margin: 0 15px; /* shrink side margins */
+    font-size: 0.95rem; /* slightly smaller text for smaller screens */
+  }
+
+  .auditiontext p {
+    margin: 0 auto;
+    font-size: 0.95rem;
+  }
+
+  .splash-logo img {
+    width: 80vw;
+  }
+
   #site-container {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -897,64 +894,6 @@ THIS IS THE HOME CSS COMBINED
 
 #content h1 {
     margin-left: 200px;
-}
-
-
-#footer {
-    width: 100%;
-    background: white;
-    padding: 30px 50px; 
-    text-align: center;
-    height: auto;
-    font-size: 12px;
-    box-sizing: border-box;
-    opacity: 0.9;
-    border-top: 1px solid #ddd;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: flex-start;
-}
-
-.footer-left {
-  display: flex;
-  gap: 20px;
-}
-
-.footer-logo {
-  height: 60px;
-}
-
-.footer-info p {
-  margin: 4px 0;
-  text-align: left;
-  opacity: 0.7;
-}
-
-.footer-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-}
-
-.social-group {
-  text-align: right;
-}
-
-.icons img {
-  height: 20px;
-  margin-left: 10px;
-  vertical-align: middle;
-}
-
-.floating {
-    clear: both;
-    height: 0px;
-    line-height: 0px;
 }
 
 #header h1 a {
@@ -1774,6 +1713,12 @@ THIS IS THE HOME CSS COMBINED
     box-sizing: border-box;
     background-color: #dcdcdc;
   }
+
+  .about-us img {
+    width: 90% !important;
+    margin-left: 20px;
+    margin-top: 100px;
+  }
 }
 
   .section-header {
@@ -1962,8 +1907,44 @@ THIS IS THE HOME CSS COMBINED
 }
 
 @media screen and (max-width: 768px) {
+  .mx-logo {
+    width: 100% !important;
+  }
+
   #middle2 {
     font-size: 20px;
+  }
+
+  .idol-data {
+    padding: 40px 20px;
+  }
+
+  .idol-data h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .data-grid {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .data-left, .data-right {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .data-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 15px;
+  }
+
+  .data-row span:first-child {
+    width: auto;
   }
 
   .idol-application {
@@ -2015,14 +1996,14 @@ THIS IS THE HOME CSS COMBINED
     color: #222;
   }
 
-#middle-bg h2 {
-  font-size: 15px !important;
-}
-
-.mv-grid {
-    flex-direction: column;
-    gap: 30px;
+  #middle-bg h2 {
+    font-size: 15px !important;
   }
+
+  .mv-grid {
+      flex-direction: column;
+      gap: 30px;
+    }
 
   .mv-box h3 {
     font-size: 22px;
@@ -2030,6 +2011,62 @@ THIS IS THE HOME CSS COMBINED
 
   .mv-box p {
     font-size: 15px;
+  }
+
+  .timeline::after {
+    left: 10px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 10px;
+  }
+
+  .timeline-item.right,
+  .timeline-item.left {
+    left: 0;
+    text-align: left;
+  }
+
+  .timeline-item.left::before,
+  .timeline-item.right::before {
+    left: 0;
+    right: auto;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-left, .footer-right {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-info p {
+    text-align: center;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+
+  .social-group {
+    text-align: center;
+  }
+
+  .icons img {
+    margin-left: 0;
+    margin: 0 8px;
+  }
+
+  .surf {
+    margin: 10px auto;
   }
 }
 
@@ -2065,6 +2102,7 @@ THIS IS THE HOME CSS COMBINED
     background-color: orange;
     color: black;
   }
+
 }
 
 .achievements-section {
